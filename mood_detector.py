@@ -1,6 +1,5 @@
 import torch
 import clip
-from PIL import Image
 
 class MoodDetector:
     def __init__(self):
@@ -19,8 +18,8 @@ class MoodDetector:
 
         self.text_tokens = clip.tokenize(self.moods).to(self.device)
 
-    def predict(self, image_path):
-        image = self.preprocess(Image.open(image_path)).unsqueeze(0).to(self.device)
+    def predict(self, image):
+        image = self.preprocess(image).unsqueeze(0).to(self.device)
 
         with torch.no_grad():
             image_features = self.model.encode_image(image)

@@ -15,12 +15,7 @@ if uploaded_file:
     image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image", use_column_width=True)
 
-    # Save temp image
-    image_path = "temp.jpg"
-    image.save(image_path)
-
-    # Predict mood
-    moods = detector.predict(image_path)
+    moods = detector.predict(image)
 
     st.subheader("Detected Moods:")
     for mood, score in moods:
