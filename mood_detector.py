@@ -7,7 +7,6 @@ class MoodDetector:
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.model, self.preprocess = clip.load("ViT-B/32", device=self.device)
 
-        # Better mood labels (important upgrade)
         self.moods = [
             "happy vibe",
             "sad emotional scene",
@@ -31,7 +30,6 @@ class MoodDetector:
 
         probs = similarity[0].cpu().numpy()
 
-        # Get top 2 moods
         top_indices = probs.argsort()[-2:][::-1]
 
         results = [(self.moods[i], float(probs[i])) for i in top_indices]
