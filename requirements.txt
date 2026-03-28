@@ -1,0 +1,7 @@
+streamlit
+torch
+torchvision
+pandas
+scikit-learn
+pillow
+git+https://github.com/openai/CLIP.git
