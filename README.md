@@ -136,7 +136,7 @@ This project uses the Spotify Tracks Dataset from Kaggle:
 ### 1. Clone repository
 
 ```bash id="3g6p1h"
-git clone https://github.com/YOUR_USERNAME/image-music-recommender.git
+git clone https://github.com/Arrow2520/image-music-recommender.git
 cd image-music-recommender
 ```
 
